@@ -1,0 +1,100 @@
+1. Constant Time complexity:
+An algorithm is said to have constant time complexity when the time it takes to execute is independent of the size of the input. In other words, no matter how large the input size grows, the execution time remains the same. This type of complexity is denoted as O(1) [Order of one].
+
+
+Example 1:
+int a, b;
+int result = a + b;
+
+cout << result;
+# This operation is O(1), because whatever the inputs are, the result will only calculate them once.
+
+Example 2:
+Accessing an element in an array by its index takes the same amount of time regardless of the size of the array:
+
+arr = [1, 2, 3, 4, 5]
+element = arr[2]  # This operation is O(1)
+In this example, retrieving the element at index 2 takes a constant amount of time, no matter how large the array grows.
+
+2. O(N) [Order of N] complexity
+An algorithm is said to be O(N) when the operation is dependent on the value of the input. This means that the time taken to complete the operation increases linearly with the size of the input.
+
+For example:
+for(int i = 0; i < n; i++){
+    // statement
+}
+
+In this loop, the time complexity is O(N) because the loop runs 
+N times where N is the size of the input. Each iteration of the loop takes constant time, but the total time taken for all iterations increases linearly with the size of the input.
+
+Some rules to follow:
+a. Increment/Decrement on a Constant Value: When the increment or decrement inside a loop is done by a constant value, it doesn't change the overall time complexity. For example, if a loop increments by 1 or 2, it's still considered O(N) because the growth rate remains linear with the size of the input.
+
+Ignore Constant Factors: It's advisable to ignore constant factors when analyzing time complexity. For instance, if the time complexity is 
+O(N/2), it's better to simplify it to O(N) because the linear growth rate is the primary concern, not the exact value of the coefficient.
+
+//## NO LOOP NO COMPLEXITY
+
+3. O(N^2) [Order of N squared] complexity:
+An algorithm is said to have O(N^2) complexity if the time taken to execute grows quadratically with the size of the input N. This means that as the input size increases, the time required to complete the algorithm increases proportional to the square of the input size.
+
+Example:
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        // statement
+    }
+}
+
+In this nested loop example, each iteration of the outer loop runs n times, and for each iteration of the outer loop, the inner loop also runs n times. Therefore, the total number of operations performed is
+n×n=n^2.
+
+The time complexity of this nested loop is O(N^2) because the number of operations grows quadratically with the input size N.
+
+Algorithms with O(N^2) complexity are often found in operations that involve nested loops where each loop depends on the size of the input.
+
+This complexity class indicates that as the input size increases, the time required to execute the algorithm grows significantly faster than linearly, making it less efficient for large inputs compared to algorithms with lower complexity classes such as O(N) or O(logN).
+
+4. O(N^3) [Order of N cubed] complexity:
+An algorithm is said to have O(N^3) complexity if the time taken to execute grows cubically with the size of the input N. This means that as the input size increases, the time required to complete the algorithm increases proportional to the cube of the input size.
+
+Example:
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        for (int k = 0; k < n; k++) {
+            // statement
+        }
+    }
+}
+In this nested loop example, each iteration of the outer loop runs n times, for each iteration of the outer loop, the middle loop runs n times, and for each iteration of the middle loop, the inner loop also runs n times. Therefore, the total number of operations performed is 
+n×n×n=n^3.
+
+The time complexity of this nested loop is O(N^3) because the number of operations grows cubically with the input size N.
+
+Example 2:
+for (int i = 0; i < n/2; i++) {
+    for (int j = 0; j < n/2; j++) {
+        for (int k = 0; k < n; k++) {
+            // statement
+        }
+    }
+}
+
+-- The outer loop runs n/2 times.
+-- For each iteration of the outer loop, the middle loop also runs n/2 times.
+-- For each iteration of the middle loop, the inner loop runs n times.
+
+
+To find the total time complexity, we multiply the complexities of the nested loops:
+
+𝑂(𝑛/2)×𝑂(𝑛/2)×𝑂(𝑛)
+= O(n/2×𝑛/2×𝑛)
+=O((n×nxn)/4)
+=O(n^3/4)
+
+Since we ignore constant factors in Big-O notation, we simplify O(n^3).
+
+Algorithms with O(N^3) complexity are typically found in operations that involve three nested loops, where each loop depends on the size of the input.
+
+This complexity class indicates that as the input size increases, the time required to execute the algorithm grows very quickly, making it much less efficient for large inputs compared to algorithms with lower complexity classes such as O(N2), O(N), or O(logN).
+
