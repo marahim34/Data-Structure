@@ -21,6 +21,9 @@ int main()
     Node *c = new Node(40);
     Node *d = new Node(50);
 
+    Node *node = new Node(5);
+    cout << node->val << endl;
+
     head->next = a;
     a->next = b;
     b->next = c;
