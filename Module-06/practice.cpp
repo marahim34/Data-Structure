@@ -1,20 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+void fun(int *&p)
+{
+    p = NULL;
+}
 int main()
 {
-    int a = 10;
-    int *pa;
-
-    cout << pa << endl;
-    cout << *pa << endl;
-    cout << &a << endl;
-
-    pa = &a;
-    cout << a << endl;
-    cout << *pa << endl;
-    cout << pa << endl;
-    cout << &a << endl;
-
+    int val = 10;
+    int *ptr = &val;
+    fun(ptr);
+    cout << *ptr << endl;
     return 0;
 }
