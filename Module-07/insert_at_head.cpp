@@ -110,7 +110,7 @@ int main()
     }
 
     print_linked_list(head);
-    cout << "tail " << tail->val;
+    // cout << "tail " << tail->val;
 
     return 0;
 }
