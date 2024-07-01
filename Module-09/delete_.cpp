@@ -33,19 +33,7 @@ void print_reverse(Node *tail)
     }
     cout << endl;
 }
-void insert_at_position(Node *head, int pos, int val)
-{
-    Node *newNode = new Node(val);
-    Node *tmp = head;
-    for (int i = 1; i <= pos - 1; i++)
-    {
-        tmp = tmp->next;
-    }
-    newNode->next = tmp->next;     // 100->30
-    tmp->next = newNode;           // 20->100
-    newNode->next->prev = newNode; // 100<-30
-    newNode->prev = tmp;           // 20<-100
-}
+
 int size(Node *head)
 {
     Node *tmp = head;
@@ -57,32 +45,37 @@ int size(Node *head)
     }
     return cnt;
 }
-void insert_head(Node *&head, Node *&tail, int val)
+
+void delete_at_position(Node *head, int pos)
 {
-    Node *newNode = new Node(val);
-    if (head == NULL)
+    Node *tmp = head;
+    for (int i = 1; i <= pos - 1; i++)
     {
-        head = newNode;
-        tail = newNode;
-        return;
+        tmp = tmp->next;
     }
-    newNode->next = head;
-    head->prev = newNode;
-    head = newNode;
+    Node *deleteNode = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->prev = tmp;
+
+    delete deleteNode;
 }
-void insert_tail(Node *&head, Node *&tail, int val)
+
+void delete_tail(Node *&tail)
 {
-    Node *newNode = new Node(val);
-    if (tail == NULL)
-    {
-        head = newNode;
-        tail = newNode;
-        return;
-    }
-    tail->next = newNode;
-    newNode->prev = tail;
-    tail = tail->next;
+    Node *deleteNode = tail;
+    tail = tail->prev;
+    delete deleteNode;
+    tail->next = NULL;
 }
+
+void delete_head(Node *&head)
+{
+    Node *deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+    head->prev = NULL;
+}
+
 int main()
 {
     Node *head = new Node(10);
@@ -98,25 +91,27 @@ int main()
     b->prev = a;
     b->next = c;
     c->prev = b;
-    int pos, val;
-    cin >> pos >> val;
 
-    if (pos > size(head))
+    int pos;
+    cin >> pos;
+
+    if (pos >= size(head))
     {
         cout << "Invalid" << endl;
     }
     else if (pos == 0)
     {
-        insert_head(head, tail, val);
+        delete_head(head);
     }
-    else if (pos == size(head))
+    else if (pos == size(head) - 1)
     {
-        insert_tail(head, tail, val);
+        delete_tail(tail);
     }
     else
     {
-        insert_at_position(head, pos, val);
+        delete_at_position(head, pos);
     }
+
     print_normal(head);
     print_reverse(tail);
 
