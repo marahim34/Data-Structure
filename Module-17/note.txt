@@ -1,0 +1,83 @@
+#Traversal Order in Tree Data Structure
+Traversal in the context of trees refers to the process of visiting each node in the tree exactly once in a specific order. Traversal is important because it allows us to process or retrieve the data stored in the nodes of the tree. Different traversal methods allow us to visit the nodes in different sequences, depending on the structure of the tree and the desired outcome.
+
+#Types of Tree Traversal
+There are two main categories of tree traversal:
+
+Depth-First Traversal (DFT)
+Breadth-First Traversal (BFT)
+
+1. Depth-First Traversal (DFT)
+Depth-First Traversal explores as far down a branch as possible before backtracking. This type of traversal goes deep into the tree before moving laterally.
+
+There are three common types of depth-first traversal:
+
+Pre-order Traversal (Root, Left, Right)
+In-order Traversal (Left, Root, Right)
+Post-order Traversal (Left, Right, Root)
+
+a. Pre-order Traversal (Root, Left, Right)
+
+Order: Visit the root node first, then recursively visit the left subtree, followed by the right subtree.
+
+Use Case: Pre-order traversal is often used to create a copy of the tree, or to get a prefix expression in arithmetic expressions.
+
+Example:
+
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+
+The pre-order traversal would visit the nodes in this order: A, B, D, E, C, F.
+
+b. In-order Traversal (Left, Root, Right)
+
+Order: Recursively visit the left subtree, visit the root node, and then the right subtree.
+
+Use Case: In binary search trees (BST), in-order traversal retrieves the nodes in non-decreasing (sorted) order.
+
+Example:
+
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+
+The in-order traversal would visit the nodes in this order: D, B, E, A, C, F.
+
+c. Post-order Traversal (Left, Right, Root)
+
+Order: Recursively visit the left subtree, then the right subtree, and finally the root node.
+
+Use Case: Post-order traversal is useful for deleting the tree or evaluating postfix expressions.
+
+Example:
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+
+The post-order traversal would visit the nodes in this order: D, E, B, F, C, A.
+
+2. Breadth-First Traversal (BFT)
+Breadth-First Traversal (also known as Level-order Traversal) explores all the nodes at the present depth level before moving on to nodes at the next depth level. It visits nodes level by level, starting from the root.
+
+Level-order Traversal
+
+Order: Visit the nodes level by level, starting from the root.
+
+Use Case: Level-order traversal is often used in scenarios like finding the shortest path in an unweighted tree, or to implement functions like serialization/deserialization of a tree.
+
+Example:
+
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+
+The level-order traversal would visit the nodes in this order: A, B, C, D, E, F.
