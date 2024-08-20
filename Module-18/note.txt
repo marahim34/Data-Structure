@@ -1,0 +1,45 @@
+Level Order Traversal
+Level order traversal is a way of visiting every node in a tree by examining each level of the tree one at a time. It starts from the root node and moves level by level, from top to bottom, and from left to right within each level. This traversal method is also known as breadth-first traversal because it explores the breadth (width) of the tree before going deeper into the next level.
+
+How Does It Work?
+Start from the Root (Level 0):
+
+The traversal begins at the root node, which is the topmost node in the tree. This node is considered to be at level 0.
+
+Visit Nodes Level by Level:
+After processing the root, you move on to the next level (level 1). At each level, you visit all nodes before moving on to the next deeper level.
+
+Left to Right Within Each Level:
+While processing nodes at a particular level, the nodes are visited from left to right. So, if a node has a left child and a right child, the left child is processed before the right child.
+
+Example:
+        1
+       / \
+      2   3
+     / \   \
+    4   5   6
+
+Level 0: Start with the root node, which is 1.
+Level 1: Move to the next level and visit nodes 2 and 3.
+Level 2: Finally, move to the last level and visit nodes 4, 5, and 6.
+So, the level order traversal of this tree would produce the sequence: 1, 2, 3, 4, 5, 6.
+
+Implementation Details:
+To implement level order traversal, we use a queue data structure. A queue is a First-In-First-Out (FIFO) structure, which means elements added first are removed first. This characteristic makes it perfect for level order traversal.
+
+Steps to Implement:
+Initialize a Queue:
+
+Start by placing the root node in the queue.
+While the Queue is Not Empty:
+
+Remove the Front Node: Take the node at the front of the queue and process it (e.g., print its value).
+Enqueue the Node’s Children: If the current node has a left child, add it to the queue first, then add the right child.
+
+This process ensures that all nodes are visited level by level.
+
+
+রিমেম্বার দ্য রুলস:
+- লাইন থেকে নিয়ে আসো। 
+- যাবতীয় যা কাজ আছে তা করো 
+- তার চিলড্রেনগুলোকে লাইনে দিয়ে দাও। 
