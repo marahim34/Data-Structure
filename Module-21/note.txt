@@ -1,0 +1,17 @@
+Binary Search Tree (BST)
+- BST stands for Binary Search Tree.
+
+- It combines the concepts of a Binary Tree and Binary Search.
+
+- A BST is a type of binary tree where you can efficiently perform binary search operations.
+
+- In an array, binary search requires the array to be sorted beforehand. However, in a BST, the tree itself is organized in a way that maintains this order without needing an external sorting step.
+
+- To maintain this structure, a BST must follow these two key rules:
+    - The values in the left subtree (node->left) must be smaller than the value of the current node.
+    - The values in the right subtree (node->right) must be greater than the value of the current node.
+
+These rules ensure that the tree remains sorted, allowing for quick searches, insertions, and deletions.
+
+
+
