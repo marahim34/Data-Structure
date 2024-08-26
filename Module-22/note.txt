@@ -1,0 +1,68 @@
+-> How can we determine the Left and Right children of a given Node if they exist?
+
+PARENt to children
+For Left Index == (Index of Node) x 2 + 1
+For Right Index = (Index of Node) x 2 + 2
+
+Children to Parent
+(Index of Node - 1) / 2;
+
+To find the Left child of any Node, we need to use a simple formula: 
+
+Left Child=(Index of Node in Array)×2+1. 
+
+This formula will give us the index of the Left child in the array. For example, the Node B is at index 1 in the array. Applying the formula, (1×2)+1=3(1 \times 2) + 1 = 3(1×2)+1=3. 
+
+The element at index 3 in the array is D. Looking at the diagram, we can see that D is indeed the Left child of B.
+
+To find the Right child of any Node, we modify the previous formula slightly: 
+
+Right Child=(Index of Node in Array)×2+2. 
+
+This formula will give us the index of the Right child in the array. For example, the Node B is at index 1 in the array. Applying the formula, (1×2)+2=4(1 \times 2) + 2 = 4(1×2)+2=4. The element at index 4 in the array is E. Looking at the diagram, we can see that E is indeed the Right child of B.
+
+
+If the calculated index does not exist within the array, it indicates that the Node does not have that particular child (Left or Right). 
+
+For example, the Node E is at index 4. If we try to find its Left child, the formula gives us (4×2)+1=9(4 \times 2) + 1 = 9(4×2)+1=9. Since index 9 does not exist in the array, it means that E does not have a Left child.
+
+We can also perform another operation using the array representation of this Complete Binary Tree, which is finding the Parent of a given Node.
+
+To do this, we use a simple formula: Parent=(Node index in array−1)/2.
+
+Let's take an even index as an example. The Node G is at index 6. Therefore, the Parent of G is (6−1)/2=5/2=2.2. The element at index 2 is Node C, which is the Parent of Node G.
+
+Now, let's consider an odd index. The Node D is at index 3. Therefore, the Parent of D is (3−1)/2=2/2=1. The element at index 1 is Node B, which is the Parent of Node D.
+
+It's important to note that the Node at index 0 is the Root, so it does not have a Parent.
+
+
+
+
+What is a Heap??
+
+HEAP is an array representation of complete binary tree.
+
+A heap is a specialized tree-based data structure that satisfies two key properties:
+
+Heap Property:
+
+Max-Heap: In a Max-Heap, every parent node has a value greater than or equal to its children. This ensures that the largest value is always at the root of the tree.
+
+         50
+       /    \
+     30      40
+    /  \    /  \
+  10   20  35   25
+
+Min-Heap: In a Min-Heap, every parent node has a value less than or equal to its children. This ensures that the smallest value is always at the root of the tree.
+
+         10
+       /    \
+     30      20
+    /  \    /  \
+  40   50  35   25
+
+Complete Binary Tree Structure:
+
+A heap is always a complete binary tree. This means all levels of the tree are fully filled except possibly the last level, which is filled from left to right. This property ensures the tree is balanced and maintains the efficiency of heap operations.
